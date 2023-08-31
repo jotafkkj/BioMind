@@ -7,11 +7,14 @@ import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
 import { join, dirname } from 'path';
 import { createUser } from './database.js';
+import { initialize } from './auth.js';
 
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 dotenv.config();
+
+initialize();
 
 app.set('view engine', 'ejs');
 app.use(express.static(join(__dirname, 'public')));
@@ -33,7 +36,7 @@ app.get('/login', (req, res) => {
     res.render('login.ejs');
 });
 
-app.post('/login', passport.authenticate('local', {
+app.post('/login', passport.authenticate("local", {
     successRedirect: '/',
     failureRedirect: 'login',
     failureFlash: true

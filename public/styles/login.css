@@ -1,12 +1,5 @@
-* {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    box-sizing: border-box;
-}
-
 body{
-    background-image: url(../img/login-background.jpg);
+    background-image: url(/img/login-background.jpg);
     background-size: cover;
     }
     
@@ -35,17 +28,35 @@ body{
         background-color: rgb(230, 230, 230);
         text-align: center;
         padding: 20px;
+        border-radius: 20px;
     }
     
     .clientes_box input{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top:8px ;
-    
+        margin-top: 15px;
+        background-color:rgb(255, 255, 255);
+        height: 40px;
+        border-style:none;
+        outline: none;
+        border-radius: 10px;
+        color: white;
+        padding-left: 10px;
     }
-    
     .clientes_box img{
         width: 130px;
         height: 80px;
     }
+    .clientes_box input{
+        height: 35px;
+        padding-left: 10px;
+        
+    }
+    
+    form [type="submit"]{
+        display: block;
+        background-color:rgb(72, 167, 37);
+        color: white;
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+      }
