@@ -44,6 +44,6 @@ export async function createUser(first_name, last_name, email, username, passwor
     VALUES(?, ?, ?, ?, ?)
     `, [first_name, last_name, email, username, password]);
     const id = rows.insertId;
-    console.log('Usuário criado com sucesso!')
+    console.log(`Usuário ${username} criado`)
     return getUser(id);
 };
